@@ -1,3 +1,7 @@
+h1 {
+    font-weight: 400;
+}
+
 .pokemons {
     display: grid;
     grid-template-columns: 1fr;
@@ -6,24 +10,38 @@
     list-style: none;
 }
 
+li {
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 150px;
+}
+
+.symbol {
+    z-index: 1;
+    opacity: 0.1;
+    margin-left: 100px;
+    margin-top: -85px;
+    width: 150px;
+}
+
 .normal {
-    background-color: #a6a877;
+    background-color: #a89177;
 }
 
 .grass {
-    background-color: #77c850;
+    background-color: #48d0b0;
 }
 
 .fire {
-    background-color: #ee7f30;
+    background-color: #fb6c6c;
 }
 
 .water {
-    background-color: #678fee;
+    background-color: #76bdfe;
 }
 
 .electric {
-    background-color: #f7cf2e;
+    background-color: #ffce4b;
 }
 
 .ice {
@@ -31,7 +49,7 @@
 }
 
 .ground {
-    background-color: #dfbf69;
+    background-color: #dabf78;
 }
 
 .flying {
@@ -39,15 +57,15 @@
 }
 
 .poison {
-    background-color: #a040a0;
+    background-color: #af5eaf;
 }
 
 .fighting {
-    background-color: #bf3029;
+    background-color: #b1504b;
 }
 
 .psychic {
-    background-color: #f65687;
+    background-color: #e06d8f;
 }
 
 .dark {
@@ -55,15 +73,15 @@
 }
 
 .rock {
-    background-color: #b8a137;
+    background-color: #ae9b46;
 }
 
 .bug {
-    background-color: #a8b720;
+    background-color: #b3be4e;
 }
 
 .ghost {
-    background-color: #6e5896;
+    background-color: #7c538c;
 }
 
 .steel {
@@ -71,7 +89,7 @@
 }
 
 .dragon {
-    background-color: #6f38f6;
+    background-color: #8871c3;
 }
 
 .fairy {
@@ -107,6 +125,7 @@
 }
 
 .pokemon .detail .types {
+    z-index: 10;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -123,6 +142,7 @@
 }
 
 .pokemon .detail img {
+    z-index: 10;
     max-width: 100%;
     height: 70px;
 }
@@ -137,13 +157,20 @@
 }
 
 .pagination button {
-    padding: .25rem .5rem;
+    padding: 0.5rem 0.75rem;
     margin: .25rem 0;
     font-size: .625rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.pagination button:hover {
+    background-color: #4f5794;
+    transition: .3s;
 }
 
 @media screen and (min-width: 380px) {
@@ -162,4 +189,51 @@
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 11; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content/Box */
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 12px;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-img {
+    width: 10vw;
+    height: auto;
+}
+
+.modal-title {
+    text-transform: capitalize;
 }
